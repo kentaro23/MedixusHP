@@ -9,20 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: "#f7f8fc",
-        ink: "#0f1728",
-        muted: "#5b6478",
-        line: "rgba(15, 23, 40, 0.08)",
-        cyan: "#56d6ff",
-        azure: "#4f6fff",
-        mint: "#43f6c6"
+        canvas: "#f4f5f7",
+        panel: "#ffffff",
+        ink: "#141823",
+        slate: "#5c6475",
+        edge: "#dbe0ea",
+        brand: "#295cff",
+        cyan: "#29c8e2",
+        mint: "#4bd5aa"
       },
       boxShadow: {
-        glow: "0 24px 80px rgba(63, 111, 255, 0.18)",
-        panel: "0 12px 40px rgba(12, 18, 34, 0.08)"
+        soft: "0 12px 30px rgba(17, 24, 39, 0.08)",
+        float: "0 24px 60px rgba(26, 44, 89, 0.14)"
       },
       backgroundImage: {
-        "hero-radial": "radial-gradient(circle at 15% -10%, rgba(79,111,255,0.24), transparent 45%), radial-gradient(circle at 92% 18%, rgba(86,214,255,0.23), transparent 42%), radial-gradient(circle at 50% 120%, rgba(67,246,198,0.2), transparent 46%)"
+        "hero-ambient":
+          "radial-gradient(circle at 12% -8%, rgba(41,92,255,0.18), transparent 44%), radial-gradient(circle at 92% 6%, rgba(41,200,226,0.18), transparent 40%), radial-gradient(circle at 80% 90%, rgba(75,213,170,0.14), transparent 42%)"
       }
     }
   },

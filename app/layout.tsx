@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Sora } from "next/font/google";
+import { Noto_Sans_JP, Outfit } from "next/font/google";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 import "./globals.css";
 
-const sora = Sora({
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["400", "500", "600", "700"]
@@ -15,9 +17,22 @@ const noto = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Medixus | 医療機関運営の次世代OS",
+  metadataBase: new URL("https://medixus-hp.vercel.app"),
+  title: {
+    default: "Medixus | 医療機関運営の次世代OS",
+    template: "%s | Medixus"
+  },
   description:
-    "Medixusは、予約からフォローアップ、AI重症化予測までを統合し、医療機関運営そのものを再設計する次世代医療OSです。"
+    "Medixusは、予約・問診・患者コミュニケーション・継続フォロー・AIリスク判定を統合し、医療機関運営そのものを再設計する次世代医療OSです。",
+  openGraph: {
+    title: "Medixus | 医療機関運営の次世代OS",
+    description:
+      "点の効率化ではなく、医療機関運営をOSから再設計する。Medixusのプロダクトと構想を紹介します。",
+    url: "https://medixus-hp.vercel.app",
+    siteName: "Medixus",
+    locale: "ja_JP",
+    type: "website"
+  }
 };
 
 export default function RootLayout({
@@ -27,8 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${sora.variable} ${noto.variable} bg-base text-ink antialiased`}>
+      <body className={`${outfit.variable} ${noto.variable} bg-canvas text-ink antialiased`}>
+        <div className="page-noise" aria-hidden />
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

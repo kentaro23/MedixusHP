@@ -14,102 +14,127 @@ html,
 body {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body), sans-serif;
   background:
-    radial-gradient(circle at 0% -10%, rgba(79, 111, 255, 0.16), transparent 38%),
-    radial-gradient(circle at 100% 10%, rgba(86, 214, 255, 0.15), transparent 40%),
-    #f7f8fc;
+    radial-gradient(circle at 0% -10%, rgba(41, 92, 255, 0.1), transparent 38%),
+    radial-gradient(circle at 100% 8%, rgba(41, 200, 226, 0.08), transparent 36%),
+    #f4f5f7;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: var(--font-display), sans-serif;
   letter-spacing: -0.02em;
 }
 
 ::selection {
-  background: rgba(79, 111, 255, 0.16);
+  background: rgba(41, 92, 255, 0.17);
 }
 
-.container-shell {
-  width: min(1200px, 92vw);
+.page-noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.26;
+  background-image: radial-gradient(rgba(10, 20, 38, 0.17) 0.55px, transparent 0.55px);
+  background-size: 3px 3px;
+}
+
+.site-shell {
+  width: min(1160px, 92vw);
   margin-inline: auto;
 }
 
-.soft-grid {
+.section-gap {
+  padding-block: clamp(3.4rem, 6vw, 5.8rem);
+}
+
+.section-title {
+  font-size: clamp(1.95rem, 3.5vw, 3rem);
+  line-height: 1.08;
+  font-weight: 600;
+  color: #141823;
+}
+
+.section-lead {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.78;
+  color: #5c6475;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(20, 24, 35, 0.72);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.6rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(41, 92, 255, 0.7), rgba(41, 200, 226, 0.4));
+}
+
+.panel {
+  border: 1px solid rgba(20, 24, 35, 0.09);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+}
+
+.grid-faint {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(17, 30, 58, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 30, 58, 0.04) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at center, black 24%, transparent 86%);
   pointer-events: none;
+  background-image:
+    linear-gradient(rgba(20, 24, 35, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 24, 35, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 45% 34%, black 18%, transparent 78%);
 }
 
-.glass {
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.5));
-  backdrop-filter: blur(16px);
+.link-underline {
+  position: relative;
 }
 
-.surface {
-  border: 1px solid rgba(15, 23, 40, 0.08);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(247, 250, 255, 0.76));
-  box-shadow: 0 10px 30px rgba(19, 31, 57, 0.08);
-}
-
-.signal-ring {
+.link-underline::after {
+  content: "";
   position: absolute;
-  border-radius: 9999px;
-  border: 1px solid rgba(79, 111, 255, 0.25);
-  animation: slowSpin 14s linear infinite;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  background: rgba(20, 24, 35, 0.45);
 }
 
-.signal-ring:nth-child(2) {
-  animation-direction: reverse;
-  animation-duration: 22s;
-  border-color: rgba(86, 214, 255, 0.33);
-}
-
-.signal-ring:nth-child(3) {
-  animation-duration: 30s;
-  border-color: rgba(67, 246, 198, 0.3);
-}
-
-.pulse {
-  animation: pulseFlow 2.6s ease-in-out infinite;
-}
-
-@keyframes slowSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulseFlow {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(0.98);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .signal-ring,
-  .pulse {
-    animation: none;
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  .link-underline::after {
+    transition: none;
   }
 }
