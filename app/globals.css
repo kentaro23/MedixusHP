@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background:
+    radial-gradient(circle at 0% -10%, rgba(79, 111, 255, 0.16), transparent 38%),
+    radial-gradient(circle at 100% 10%, rgba(86, 214, 255, 0.15), transparent 40%),
+    #f7f8fc;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: rgba(79, 111, 255, 0.16);
+}
+
+.container-shell {
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+}
+
+.soft-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(17, 30, 58, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 30, 58, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 24%, transparent 86%);
+  pointer-events: none;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.5));
+  backdrop-filter: blur(16px);
+}
+
+.surface {
+  border: 1px solid rgba(15, 23, 40, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(247, 250, 255, 0.76));
+  box-shadow: 0 10px 30px rgba(19, 31, 57, 0.08);
+}
+
+.signal-ring {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(79, 111, 255, 0.25);
+  animation: slowSpin 14s linear infinite;
+}
+
+.signal-ring:nth-child(2) {
+  animation-direction: reverse;
+  animation-duration: 22s;
+  border-color: rgba(86, 214, 255, 0.33);
+}
+
+.signal-ring:nth-child(3) {
+  animation-duration: 30s;
+  border-color: rgba(67, 246, 198, 0.3);
+}
+
+.pulse {
+  animation: pulseFlow 2.6s ease-in-out infinite;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseFlow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-ring,
+  .pulse {
+    animation: none;
+  }
+}
