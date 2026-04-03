@@ -17,7 +17,7 @@ export function Pipeline() {
   return (
     <section id="pipeline" ref={sectionRef} className="section-shell bg-background py-24 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
-        <SectionHeading title="1つの\"電話\"から、あらゆる疾患へ。" align="center" />
+        <SectionHeading title="1つの「電話」から、あらゆる疾患へ。" align="center" />
 
         <div className="mt-12">
           <div className="h-2 w-full overflow-hidden rounded-full bg-primary/10">

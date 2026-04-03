@@ -7,7 +7,7 @@ export function Technology() {
     <section id="technology" className="section-shell bg-background py-24 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
         <SectionHeading
-          title="\"山の土砂崩れ\"を予測するように、身体の危機を予測する。"
+          title="「山の土砂崩れ」を予測するように、身体の危機を予測する。"
           align="center"
           description="遺伝子の固定リスクと、日々の声データを重ねて個別化予測を行う独自エンジン。"
         />
@@ -32,7 +32,7 @@ export function Technology() {
           <ScrollReveal className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-100 p-8 shadow-soft" delay={0.2}>
             <p className="font-en text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Layer 2</p>
             <h3 className="mt-3 text-2xl font-bold text-primary">デジタルバイオマーカー</h3>
-            <p className="mt-2 text-sm font-semibold text-emerald-800">今降っている雨 — 日々変化する、あなたの\"今\"の状態</p>
+            <p className="mt-2 text-sm font-semibold text-emerald-800">今降っている雨 — 日々変化する、あなたの「今」の状態</p>
             <p className="mt-4 text-sm leading-relaxed text-emerald-900/80">
               Voice Biomarker（声帯浮腫み検知）、呼吸パターン、発話速度・リズムの変化をリアルタイム解析。
             </p>

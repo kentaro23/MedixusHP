@@ -7,7 +7,7 @@ export function Comparison() {
     <section className="section-shell bg-white py-24 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
         <SectionHeading
-          title="なぜ、Medixusだけが\"これ\"をできるのか。"
+          title="なぜ、Medixusだけが「これ」をできるのか。"
           align="center"
           description="ハード非依存・App-less・遺伝子統合の3点で、運用とスケールの制約を同時に解く。"
         />
