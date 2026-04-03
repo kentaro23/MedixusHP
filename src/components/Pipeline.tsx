@@ -51,7 +51,7 @@ export function Pipeline() {
         </div>
 
         <ScrollReveal className="mt-10 rounded-2xl border border-primary/15 bg-white p-6 text-sm leading-relaxed text-textSecondary" delay={0.2}>
-          AIモデルの差し替えだけで疾患を横展開できる"プラットフォーム"設計。電話（マイク）という共通インターフェースが、無限のパイプラインを可能にします。
+          AIモデルの差し替えだけで疾患を横展開できる「プラットフォーム」設計。電話（マイク）という共通インターフェースが、無限のパイプラインを可能にします。
         </ScrollReveal>
       </div>
     </section>

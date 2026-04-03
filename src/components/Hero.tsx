@@ -18,7 +18,7 @@ export function Hero() {
             <h1 className="text-balance text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">声で、命を守る。</h1>
             <h2 className="mt-6 text-balance text-lg font-medium leading-relaxed text-white/90 md:text-2xl">
               毎日の電話に答えるだけ。AIが声帯の微細な変化を捉え、
-              遺伝子リスクと掛け合わせて心不全の再入院を"未然に"防ぐ。
+              遺伝子リスクと掛け合わせて心不全の再入院を「未然に」防ぐ。
             </h2>
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
               デバイス不要。アプリ不要。北里大学との共同研究から生まれた、世界初※のApp-less医療AIプラットフォーム。

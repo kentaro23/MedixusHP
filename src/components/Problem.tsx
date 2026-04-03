@@ -27,7 +27,7 @@ export function Problem() {
 
         <ScrollReveal className="mx-auto mt-12 max-w-4xl text-center" delay={0.35}>
           <p className="text-lg font-semibold text-primary md:text-xl">
-            Medixus は、"声"という最もシンプルなインターフェースで、この課題を解決します。
+            Medixus は、「声」という最もシンプルなインターフェースで、この課題を解決します。
           </p>
         </ScrollReveal>
       </div>
