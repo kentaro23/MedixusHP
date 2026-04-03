@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0a2540;
+  --secondary: #00d4aa;
+  --accent: #635bff;
+  --bg: #fafbfc;
+  --surface: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-noto), sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.font-en {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.section-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-bg {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dot-bg {
+  background-image: radial-gradient(rgba(10, 37, 64, 0.14) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.section-divider {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(10, 37, 64, 0.06), rgba(0, 212, 170, 0.06));
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .section-divider {
+    height: 56px;
+  }
+}
